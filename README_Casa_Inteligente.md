@@ -1,0 +1,211 @@
+# Casa Inteligente
+
+Projeto acadêmico do curso de **Ciência da Computação**. A proposta é
+desenvolver uma solução de casa inteligente com cadastro e
+acompanhamento de equipamentos e manutenções, além de automação de
+notificações.
+
+> **Importante:** este README foi elaborado com as informações
+> disponíveis. Complete os campos entre colchetes e ajuste as descrições
+> para corresponder ao que realmente está implementado no repositório.
+
+## Objetivo
+
+Apoiar o gerenciamento de equipamentos e manutenções, integrando a
+aplicação desenvolvida no Bubble a recursos de automação para avisar os
+responsáveis quando uma manutenção exigir atenção.
+
+## Tecnologias e ferramentas
+
+  -----------------------------------------------------------------------
+  Tecnologia                          Utilização no projeto
+  ----------------------------------- -----------------------------------
+  Bubble                              Construção da aplicação e
+                                      gerenciamento dos dados
+
+  n8n                                 Automação do fluxo de notificações
+
+  JavaScript                          Cálculo dos dias restantes no node
+                                      Code do n8n
+
+  Python                              Classificação de manutenção,
+                                      conforme o planejamento da equipe
+
+  Git e GitHub                        Controle de versão, armazenamento e
+                                      documentação
+  -----------------------------------------------------------------------
+
+## Fluxo de notificações
+
+``` text
+Bubble → Webhook (n8n) → Code → IF → Gmail
+```
+
+1.  **Bubble:** envia os dados da manutenção por uma requisição HTTP.
+2.  **Webhook:** recebe a requisição POST no n8n.
+3.  **Code:** calcula quantos dias faltam para a data prevista.
+4.  **IF:** avalia as condições para decidir se deve notificar.
+5.  **Gmail:** envia o aviso ao responsável quando as condições são
+    atendidas.
+
+### Regra de notificação
+
+``` text
+dias_restantes <= 7 E status != "Concluída"
+```
+
+As duas condições devem ser verdadeiras ao mesmo tempo. Manutenções
+atrasadas também se enquadram na condição de prazo, pois apresentam um
+número negativo de dias restantes.
+
+## Dados de entrada
+
+Exemplo ilustrativo do JSON enviado ao fluxo:
+
+``` json
+{
+  "equipamento": "Compressor 01",
+  "tipo_manutencao": "Preventiva",
+  "data_manutencao": "2026-11-20",
+  "responsavel": "João Silva",
+  "email_responsavel": "joao@empresa.com",
+  "status": "Agendada"
+}
+```
+
+  Campo                 Tipo                    Descrição
+  --------------------- ----------------------- --------------------------------------
+  `equipamento`         String                  Nome ou identificação do equipamento
+  `tipo_manutencao`     String                  Tipo de manutenção
+  `data_manutencao`     String (`AAAA-MM-DD`)   Data prevista
+  `responsavel`         String                  Nome do responsável
+  `email_responsavel`   String                  E-mail de destino
+  `status`              String                  Situação da manutenção
+
+## Estrutura do repositório
+
+A estrutura abaixo é uma **sugestão**. Ajuste-a para refletir os
+arquivos que realmente estão no GitHub.
+
+``` text
+casa-inteligente/
+├── README.md
+├── bubble/
+│   └── [documentação, imagens ou exportações, se houver]
+├── python/
+│   └── [códigos de classificação de manutenção]
+├── n8n/
+│   └── [workflow exportado em JSON, se houver]
+├── docs/
+│   ├── documentacao-tecnica.docx
+│   └── roteiro-apresentacao.docx
+└── evidencias/
+    └── [capturas de tela e registros de testes]
+```
+
+## Acesso e execução
+
+### Aplicação Bubble
+
+-   Link: **\[INSERIR LINK DA APLICAÇÃO\]**
+-   Ambiente: **\[DESENVOLVIMENTO / TESTE / PRODUÇÃO\]**
+
+### Automação n8n
+
+-   Workflow: **Notificação de Manutenção**
+-   Método HTTP: `POST`
+-   Caminho sugerido no guia: `manutencao`
+-   Arquivo JSON exportado: **\[INSERIR CAMINHO, SE DISPONÍVEL\]**
+
+### Código Python
+
+-   Arquivo principal: **\[INSERIR CAMINHO REAL\]**
+-   Como executar: **\[INSERIR COMANDO E DEPENDÊNCIAS REAIS\]**
+-   Entradas e saídas: **\[DESCREVER COM BASE NO CÓDIGO IMPLEMENTADO\]**
+
+Não publique URLs privadas, credenciais, tokens ou senhas no
+repositório. Os comandos de instalação e execução devem ser documentados
+após a confirmação dos arquivos e dependências reais.
+
+## Cenários de teste
+
+O material técnico propõe estes resultados esperados:
+
+  -----------------------------------------------------------------------
+  Cenário                             Resultado esperado
+  ----------------------------------- -----------------------------------
+  Manutenção daqui a 3 dias e status  Enviar e-mail
+  diferente de Concluída              
+
+  Manutenção daqui a 30 dias          Não enviar e-mail
+
+  Manutenção com data passada e       Enviar e-mail
+  status diferente de Concluída       
+
+  Status igual a Concluída            Não enviar e-mail
+  -----------------------------------------------------------------------
+
+**Status dos testes:** \[PREENCHER APÓS EXECUTAR: não executado /
+aprovado / reprovado, com evidências\].
+
+## Equipe e responsabilidades
+
+Confirme os nomes e a divisão final antes de publicar:
+
+  -----------------------------------------------------------------------
+  Integrante                          Responsabilidade registrada no
+                                      planejamento
+  ----------------------------------- -----------------------------------
+  Eduarda                             Estrutura do aplicativo no Bubble;
+                                      integração Bubble + n8n com João;
+                                      testes
+
+  Gabriel                             Banco de dados no Bubble; testes de
+                                      cadastro de equipamentos
+
+  \[Integrante responsável\]          Classificação de manutenção em
+                                      Python; testes da classificação
+
+  João                                Workflow de notificações no n8n;
+                                      integração Bubble + n8n com Eduarda
+
+  Artur                               Repositório e documentação;
+                                      organização das evidências com a
+                                      equipe
+
+  Todos                               Evidências, teste do fluxo completo
+                                      e apresentação final
+  -----------------------------------------------------------------------
+
+## Documentação complementar
+
+-   Documentação técnica: **\[INSERIR LINK DO ARQUIVO OU DA PASTA\]**
+-   Roteiro de apresentação: **\[INSERIR LINK DO ARQUIVO OU DA PASTA\]**
+-   Evidências: **\[INSERIR LINK DA PASTA\]**
+
+## Como contribuir
+
+1.  Consulte a divisão de tarefas antes de alterar uma parte do projeto.
+2.  Crie uma branch para sua alteração.
+3.  Faça commits com mensagens curtas e descritivas.
+4.  Revise as alterações antes de abrir um Pull Request.
+5.  Não envie credenciais, dados pessoais ou arquivos secretos.
+
+Exemplos de branches:
+
+``` text
+feature/cadastro-equipamentos
+feature/classificacao-manutencao
+feature/notificacoes-n8n
+docs/atualizacao-readme
+```
+
+## Controle de versão
+
+-   Versão do documento: `1.0`
+-   Última atualização: **\[DD/MM/AAAA\]**
+-   Responsável pela documentação: **\[NOME\]**
+
+------------------------------------------------------------------------
+
+Projeto acadêmico --- Ciência da Computação --- 2026.

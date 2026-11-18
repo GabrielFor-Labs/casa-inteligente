@@ -1,13 +1,9 @@
 # Casa Inteligente
 
-Projeto acadêmico do curso de **Ciência da Computação**. A proposta é
+Projeto **ExpoTech 2026**. A proposta é
 desenvolver uma solução de casa inteligente com cadastro e
 acompanhamento de equipamentos e manutenções, além de automação de
 notificações.
-
-> **Importante:** este README foi elaborado com as informações
-> disponíveis. Complete os campos entre colchetes e ajuste as descrições
-> para corresponder ao que realmente está implementado no repositório.
 
 ## Objetivo
 
@@ -23,35 +19,35 @@ responsáveis quando uma manutenção exigir atenção.
   Bubble                              Construção da aplicação e
                                       gerenciamento dos dados
 
-  n8n                                 Automação do fluxo de notificações
+  Make                                 Automação do fluxo de notificações
 
   JavaScript                          Cálculo dos dias restantes no node
-                                      Code do n8n
+                                      Code do Make
 
   Python                              Classificação de manutenção,
                                       conforme o planejamento da equipe
 
-  Git e GitHub                        Controle de versão, armazenamento e
+  GitHub                        Controle de versão, armazenamento e
                                       documentação
   -----------------------------------------------------------------------
 
 ## Fluxo de notificações
 
 ``` text
-Bubble → Webhook (n8n) → Code → IF → Gmail
+Bubble → Webhook (Make) → Code → IF → Outlook
 ```
 
 1.  **Bubble:** envia os dados da manutenção por uma requisição HTTP.
-2.  **Webhook:** recebe a requisição POST no n8n.
+2.  **Webhook:** recebe a requisição POST no Make.
 3.  **Code:** calcula quantos dias faltam para a data prevista.
 4.  **IF:** avalia as condições para decidir se deve notificar.
-5.  **Gmail:** envia o aviso ao responsável quando as condições são
+5.  **Outlook:** envia o aviso ao responsável quando as condições são
     atendidas.
 
 ### Regra de notificação
 
 ``` text
-dias_restantes <= 7 E status != "Concluída"
+dias_restantes <= 3 E status != "Concluída"
 ```
 
 As duas condições devem ser verdadeiras ao mesmo tempo. Manutenções
@@ -84,8 +80,6 @@ Exemplo ilustrativo do JSON enviado ao fluxo:
 
 ## Estrutura do repositório
 
-A estrutura abaixo é uma **sugestão**. Ajuste-a para refletir os
-arquivos que realmente estão no GitHub.
 
 ``` text
 casa-inteligente/
@@ -94,7 +88,7 @@ casa-inteligente/
 │   └── [documentação, imagens ou exportações, se houver]
 ├── python/
 │   └── [códigos de classificação de manutenção]
-├── n8n/
+├── Make/
 │   └── [workflow exportado em JSON, se houver]
 ├── docs/
 │   ├── documentacao-tecnica.docx
@@ -108,9 +102,8 @@ casa-inteligente/
 ### Aplicação Bubble
 
 -   Link: **\[INSERIR LINK DA APLICAÇÃO\]**
--   Ambiente: **\[DESENVOLVIMENTO / TESTE / PRODUÇÃO\]**
 
-### Automação n8n
+### Automação Make
 
 -   Workflow: **Notificação de Manutenção**
 -   Método HTTP: `POST`
@@ -157,17 +150,18 @@ Confirme os nomes e a divisão final antes de publicar:
                                       planejamento
   ----------------------------------- -----------------------------------
   Eduarda                             Estrutura do aplicativo no Bubble;
-                                      integração Bubble + n8n com João;
+                                      integração Bubble + Make com Rafa;
                                       testes
 
-  Gabriel                             Banco de dados no Bubble; testes de
-                                      cadastro de equipamentos
-
-  \[Integrante responsável\]          Classificação de manutenção em
+  Gabriel                             Repositório e documentação; organização
+                                      de tarefas usando Scrum e kanban
+                                      no Trello
+                                      
+  Rafael                              Classificação de manutenção em
                                       Python; testes da classificação
 
-  João                                Workflow de notificações no n8n;
-                                      integração Bubble + n8n com Eduarda
+  João                                Workflow de notificações no Make;
+                                      integração Bubble + Make com Eduarda
 
   Artur                               Repositório e documentação;
                                       organização das evidências com a
@@ -180,32 +174,6 @@ Confirme os nomes e a divisão final antes de publicar:
 ## Documentação complementar
 
 -   Documentação técnica: **\[INSERIR LINK DO ARQUIVO OU DA PASTA\]**
--   Roteiro de apresentação: **\[INSERIR LINK DO ARQUIVO OU DA PASTA\]**
 -   Evidências: **\[INSERIR LINK DA PASTA\]**
 
-## Como contribuir
-
-1.  Consulte a divisão de tarefas antes de alterar uma parte do projeto.
-2.  Crie uma branch para sua alteração.
-3.  Faça commits com mensagens curtas e descritivas.
-4.  Revise as alterações antes de abrir um Pull Request.
-5.  Não envie credenciais, dados pessoais ou arquivos secretos.
-
-Exemplos de branches:
-
-``` text
-feature/cadastro-equipamentos
-feature/classificacao-manutencao
-feature/notificacoes-n8n
-docs/atualizacao-readme
-```
-
-## Controle de versão
-
--   Versão do documento: `1.0`
--   Última atualização: **\[DD/MM/AAAA\]**
--   Responsável pela documentação: **\[NOME\]**
-
 ------------------------------------------------------------------------
-
-Projeto acadêmico --- Ciência da Computação --- 2026.

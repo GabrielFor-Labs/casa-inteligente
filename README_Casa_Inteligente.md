@@ -116,13 +116,6 @@ casa-inteligente/
 -   Como executar: **\[INSERIR COMANDO E DEPENDÊNCIAS REAIS\]**
 -   Entradas e saídas: **\[DESCREVER COM BASE NO CÓDIGO IMPLEMENTADO\]**
 
-Não publique URLs privadas, credenciais, tokens ou senhas no
-repositório. Os comandos de instalação e execução devem ser documentados
-após a confirmação dos arquivos e dependências reais.
-
-## Cenários de teste
-
-O material técnico propõe estes resultados esperados:
 
   -----------------------------------------------------------------------
   Cenário                             Resultado esperado
@@ -137,23 +130,21 @@ O material técnico propõe estes resultados esperados:
 
   Status igual a Concluída            Não enviar e-mail
   -----------------------------------------------------------------------
-
-**Status dos testes:** \[PREENCHER APÓS EXECUTAR: não executado /
-aprovado / reprovado, com evidências\].
+  
 
 ## Equipe e responsabilidades
 
 Confirme os nomes e a divisão final antes de publicar:
 
   -----------------------------------------------------------------------
-  Integrante                          Responsabilidade registrada no
+  Integrante   RA                     Responsabilidade registrada no
                                       planejamento
   ----------------------------------- -----------------------------------
-  Eduarda                             Estrutura do aplicativo no Bubble;
+  Eduarda     274232                  Estrutura do aplicativo no Bubble;
                                       integração Bubble + Make com Rafa;
                                       testes
 
-  Gabriel                             Repositório e documentação; organização
+  Gabriel     187249                  Repositório e documentação; organização
                                       de tarefas usando Scrum e kanban
                                       no Trello
                                       

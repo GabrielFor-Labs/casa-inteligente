@@ -78,37 +78,13 @@ Exemplo ilustrativo do JSON enviado ao fluxo:
   `email_responsavel`   String                  E-mail de destino
   `status`              String                  Situação da manutenção
 
-## Estrutura do repositório
-
-
-``` text
-casa-inteligente/
-├── README.md
-├── bubble/
-│   └── [documentação, imagens ou exportações, se houver]
-├── python/
-│   └── [códigos de classificação de manutenção]
-├── Make/
-│   └── [workflow exportado em JSON, se houver]
-├── docs/
-│   ├── documentacao-tecnica.docx
-│   └── roteiro-apresentacao.docx
-└── evidencias/
-    └── [capturas de tela e registros de testes]
-```
-
-## Acesso e execução
-
-### Aplicação Bubble
-
--   Link: **\[INSERIR LINK DA APLICAÇÃO\]**
 
 ### Automação Make
 
 -   Workflow: **Notificação de Manutenção**
 -   Método HTTP: `POST`
 -   Caminho sugerido no guia: `manutencao`
--   Arquivo JSON exportado: **\[INSERIR CAMINHO, SE DISPONÍVEL\]**
+
 
 ### Código Python
 
@@ -165,6 +141,5 @@ Confirme os nomes e a divisão final antes de publicar:
 ## Documentação complementar
 
 -   Documentação técnica: **\[INSERIR LINK DO ARQUIVO OU DA PASTA\]**
--   Evidências: **\[INSERIR LINK DA PASTA\]**
 
 ------------------------------------------------------------------------

@@ -133,7 +133,6 @@ Confirme os nomes e a divisão final antes de publicar:
 
 ## Documentação complementar
 
--   Documentação técnica: **[Documentacao_Casa_em_Dia_2050_Python_atualizada (2).docx](https://github.com/user-attachments/files/35235325/Documentacao_Casa_em_Dia_2050_Python_atualizada.2.docx)
-**
+-   Documentação técnica: **[Documentacao_Casa_em_Dia_2050_Python_atualizadaFN.docx](https://github.com/user-attachments/files/35235463/Documentacao_Casa_em_Dia_2050_Python_atualizadaFN.docx)**
 
 ------------------------------------------------------------------------

@@ -27,7 +27,7 @@ responsáveis quando uma manutenção exigir atenção.
   Python                              Classificação de manutenção,
                                       conforme o planejamento da equipe
 
-  GitHub                        Controle de versão, armazenamento e
+  GitHub                              Controle de versão, armazenamento e
                                       documentação
   -----------------------------------------------------------------------
 
@@ -86,13 +86,6 @@ Exemplo ilustrativo do JSON enviado ao fluxo:
 -   Caminho sugerido no guia: `manutencao`
 
 
-### Código Python
-
--   Arquivo principal: **\[INSERIR CAMINHO REAL\]**
--   Como executar: **\[INSERIR COMANDO E DEPENDÊNCIAS REAIS\]**
--   Entradas e saídas: **\[DESCREVER COM BASE NO CÓDIGO IMPLEMENTADO\]**
-
-
   -----------------------------------------------------------------------
   Cenário                             Resultado esperado
   ----------------------------------- -----------------------------------
@@ -124,10 +117,10 @@ Confirme os nomes e a divisão final antes de publicar:
                                       de tarefas usando Scrum e kanban
                                       no Trello
                                       
-  Rafael                              Classificação de manutenção em
+  Rafael      277673                  Classificação de manutenção em
                                       Python; testes da classificação
 
-  João                                Workflow de notificações no Make;
+  João        291542                  Workflow de notificações no Make;
                                       integração Bubble + Make com Eduarda
 
   Artur                               Repositório e documentação;
@@ -140,6 +133,7 @@ Confirme os nomes e a divisão final antes de publicar:
 
 ## Documentação complementar
 
--   Documentação técnica: **\[INSERIR LINK DO ARQUIVO OU DA PASTA\]**
+-   Documentação técnica: **[Documentacao_Casa_em_Dia_2050_Python_atualizada (2).docx](https://github.com/user-attachments/files/35235325/Documentacao_Casa_em_Dia_2050_Python_atualizada.2.docx)
+**
 
 ------------------------------------------------------------------------
